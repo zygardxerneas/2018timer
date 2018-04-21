@@ -1,4 +1,5 @@
 ﻿var normalelapse = 100;
+var isQ_A=0;
 var isFiveSecond=0;
 var isOneMinute=0;
 var oneMinuteFile="mp3/1m.mp3";
@@ -105,7 +106,8 @@ function reset()
     normalelapse = 100;
     nextelapse = normalelapse;
     startTime=null;
-    clock.innerText="08:00";
+    if (isQ_A==0) clock.innerText="08:00";
+    else clock.innerText="02:00"
     start = clock.innerText+":00";
     counter=0;
     timer = null;
@@ -113,6 +115,9 @@ function reset()
     isFiveSecond=0;
 }
 function nextGroup() {
+    isQ_A=0;
+    document.getElementById("question").style.visibility='hidden';
+    document.getElementById('q&aB').value='Q&A';
     reset();
     lastGroupB.disabled=false;
     nextGroupB.disabled=false;
@@ -132,6 +137,9 @@ function nextGroup() {
     if (groupi>=16) nextGroupB.disabled=true;
 }
 function lastGroup() {
+    isQ_A=0;
+    document.getElementById("question").style.visibility='hidden';
+    document.getElementById('q&aB').value='Q&A';
     reset();
     lastGroupB.disabled=false;
     nextGroupB.disabled=false;
@@ -149,4 +157,24 @@ function lastGroup() {
     }
     if (groupi<=0) lastGroupB.disabled=true;
     if (groupi>=16) nextGroupB.disabled=true;
+}
+function Q_A()
+{
+    if (isQ_A==0)
+    {
+        isQ_A=1;
+        var qi=Math.floor(Math.random()*(9-0+1)+0);
+        document.getElementById('question').innerHTML='第'+qi+'题';
+        document.getElementById("question").style.visibility='visible';
+        document.getElementById('q&aB').value='Show';
+
+    }
+    else
+    {
+        isQ_A=0;
+        document.getElementById("question").style.visibility='hidden';
+        document.getElementById('q&aB').value='Q&A';
+    }
+    reset();
+    if (isQ_A==1) run();
 }
