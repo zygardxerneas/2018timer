@@ -114,6 +114,8 @@ function reset()
 }
 function nextGroup() {
     reset();
+    lastGroupB.disabled=false;
+    nextGroupB.disabled=false;
     groupi++;
     if(groupi<16)
     {
@@ -126,5 +128,25 @@ function nextGroup() {
             document.getElementById('groupNum').innerText=groupNum[groupi];
             document.getElementById("readyShow").style.visibility='hidden';
         }
-
+    if (groupi<=0) lastGroupB.disabled=true;
+    if (groupi>=16) nextGroupB.disabled=true;
+}
+function lastGroup() {
+    reset();
+    lastGroupB.disabled=false;
+    nextGroupB.disabled=false;
+    groupi--;
+    if(groupi<16)
+    {
+        document.getElementById('groupNum').innerText=groupNum[groupi];
+        document.getElementById('readyGroupNum').innerText = groupNum[groupi + 1];
+    }
+    else
+    if (groupi==16)
+    {
+        document.getElementById('groupNum').innerText=groupNum[groupi];
+        document.getElementById("readyShow").style.visibility='hidden';
+    }
+    if (groupi<=0) lastGroupB.disabled=true;
+    if (groupi>=16) nextGroupB.disabled=true;
 }

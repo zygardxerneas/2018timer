@@ -4,23 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>2017-2018学年东南大学“国旗团支部”公开答辩计时器</title>
-    <script src="js/jquery-3.3.1.min.js"></script>
     <script language="Javascript" src="timer.js"></script>
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
     <style>
-        .btn
-        {
-            font-size: 25px;
-            FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#cecfde);
-            color: black;
-        }
-
-        .btn3_mouseup
-        {
-            font-size: 25px;
-            FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,  StartColorStr=#ffffff,  EndColorStr=#C3DAF5);
-            color: black;
-            margin-left:8%
-        }
         .page-title-time {
             width:80%;
             margin-left: auto;
@@ -118,13 +109,14 @@
             <div style="display: inline">团支部做好准备</div>
         </div>
         <div id="clock"  class="page-title-time" >08:00</div>
-        <div id="question" class="question" style="visibility: hidden;">无</div>
+        <!--div id="question" class="question" style="visibility: hidden;">无</div-->
         <br/>
-        <div style="font-weight:bold;font-size:30px;margin-left: 40%;color:#FF4500;">
-            <input id="startB" class="btn3_mouseup" type="button" value="Start" onclick="run()">
-            <input id="endB" class="btn" type="button" value="Pause" onclick="stop()">
-            <input id="resetB" class="btn" type="button" value="Reset" onclick="reset()">
-            <input id="nextGroup" class="btn" type="button" value="NextG" onclick="nextGroup()">
+        <div class="row" style="font-weight:bold;font-size:30px;margin-left: 17%;color:#FF4500;">
+            <input id="startB" class="col-md-2 btn btn-success" type="button" value="Start" onclick="run()">
+            <input id="endB" class="col-md-2 btn btn-default" type="button" value="Pause" onclick="stop()">
+            <input id="resetB" class="col-md-2 btn btn-info" type="button" value="Reset" onclick="reset()">
+            <input id="lastGroupB" class="col-md-2 btn btn-warning" disabled="disabled" type="button" value="LastG" onclick="lastGroup()">
+            <input id="nextGroupB" class="col-md-2 btn btn-danger" type="button" value="NextG" onclick="nextGroup()">
             <input id="diff" type="hidden">
             <input id="next" type="hidden">
         </div>

@@ -1,0 +1,137 @@
+body{
+	/*font-family: "微软雅黑";*/
+}
+#logoImg:hover{
+	animation: shake 0.2s linear 0s infinite alternate;
+	/* Firefox: */
+	-moz-animation: shake 0.2s linear 0s infinite alternate;
+	/* Safari 和 Chrome: */
+	-webkit-animation: shake 0.2s linear 0s infinite alternate;
+	/* Opera: */
+	-o-animation: shake 0.2s linear 0s infinite alternate;
+}
+@keyframes shake
+{
+from {transform: rotate(-40deg);}
+to {transform: rotate(40deg);}
+}
+
+@-moz-keyframes shake /* Firefox */
+{
+from {-moz-transform: rotate(-40deg);}
+to {-moz-transform: rotate(40deg);}
+}
+
+@-webkit-keyframes shake /* Safari 和 Chrome */
+{
+from {-webkit-transform: rotate(-40deg);}
+to {-webkit-transform: rotate(40deg);}
+}
+
+@-o-keyframes shake /* Opera */
+{
+from {-o-transform: rotate(-40deg);}
+to {-o-transform: rotate(40deg);}
+}
+#lesson-editer-div img {
+	width: 100%;
+}
+
+/* Table Head */
+.mycap{
+	font-size: 20px;
+	text-align: left;
+	color:rgb(180,180,180);
+	font-weight:bold;
+	position: relative;
+	left: 20px;
+}
+
+table#lessonMain tr,table#lessonMain th{
+	margin-left: 200px;
+}
+table.lesson-table1 thead,table.lesson-table1 tr{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(200,200,200);
+}
+table.lesson-table1 {
+	width: 95%;
+
+
+}
+table.lesson-table1 td, table.lesson-table1 th {
+	text-align: left;
+	padding: 5px 10px 5px 0px;
+	font-size: 12px;
+	font-family: Verdana;
+	color: rgb(50,50,50);
+}
+table.lesson-table1 tr:nth-child(even) {
+	background: rgb(220, 220, 220);
+}
+table.lesson-table1 tr:nth-child(odd) {
+	background: #FFF;
+}
+table.lesson-table1 caption{
+	font-size: 20px;
+	text-align: left;
+	color:grey;
+	font-weight:bold;
+}
+.myDiv {
+	position: relative;
+	left: 200px;
+	width: 70%;
+	margin-top: 30px;
+	-webkit-box-shadow: 3px 3px 3px;
+	-moz-box-shadow: 3px 3px 3px;
+	box-shadow: 3px 3px 3px;
+	padding-bottom: 15px;
+}
+.myDiv1{
+	height: 100px ;
+	position: relative;
+	left:200px;
+	width: 70%;
+	margin-top: 30px;
+	-webkit-box-shadow: 3px 3px 3px;
+	-moz-box-shadow: 3px 3px 3px;
+	box-shadow: 3px 3px 3px;
+}
+table.lesson-table2 thead,table.lesson-table1 tr{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(200,200,200);
+}
+table.lesson-table2 {
+	width: 95%;
+}
+table.lesson-table2 td, table.lesson-table1 th {
+	text-align: left;
+	padding: 5px 10px 5px 0px;
+	font-size: 12px;
+	font-family: Verdana;
+
+}
+table.lesson-table2 tr:nth-child(even) {
+	background: rgb(220, 220, 220);
+}
+table.lesson-table2 tr:nth-child(odd) {
+	background: #FFF;
+}
+table.lesson-table2 caption{
+	font-size: 20px;
+	text-align: center;
+	color:grey;
+	font-weight:bold;
+}
+table.lesson-table2 tr:hover{
+	background-color: #eeeeee;
+	cursor:pointer;
+}
+.circular--squareP{
+	height: 40px;
+	width: 40px;
+	border-radius:50%;
+}
