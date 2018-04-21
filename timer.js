@@ -105,7 +105,7 @@ function reset()
     normalelapse = 100;
     nextelapse = normalelapse;
     startTime=null;
-    clock.innerText="02:00";
+    clock.innerText="08:00";
     start = clock.innerText+":00";
     counter=0;
     timer = null;
@@ -119,5 +119,9 @@ function nextGroup() {
     if(groupi<16)
         document.getElementById('readyGroupNum').innerText=groupNum[groupi+1];
     else
-        document.getElementById("readyGroupNum").style.visibility='hidden';
+        if (groupi==16)
+        {
+            document.getElementById("readyShow").style.visibility='hidden';
+        }
+
 }
