@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>2017-2018学年东南大学“国旗团支部”公开答辩计时器</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script language="Javascript" src="timer.js"></script>
     <style>
         .btn
         {
@@ -19,42 +22,111 @@
             margin-left:8%
         }
         .page-title-time {
+            width:80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
             letter-spacing: 10px;
-
             font-weight: 700;
             font-size:1200px;
             font-family: Trebuchet MS;
-            text-shadow: 0px 0px 40px ##E6E6FA;
+            text-shadow: 0px 0px 40px #E6E6FA;
             color:  #F0FFFF;
-            margin-left:20%;
         }
-
-        body
-        {
-            width:auto;
+        #web_bg{
+            position:fixed;
+            top: 0;
+            left: 0;
+            width:100%;
             height:100%;
-            background: url("img/国团答辩.jpg") no-repeat;
-            background-size:cover;
-            background-position:top;
-            margin-top: 15%;
+            min-width: 1000px;
+            z-index:-10;
+            zoom: 1;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+        .onShow
+        {
+            width:70%;
+            margin-top: 9%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            letter-spacing: 10px;
+            font-weight: 900;
+            font-size:200px;
+            font-family: SimSun;
+            text-shadow: 0px 0px 40px #E6E6FA;
+            color:  black;
+        }
+        .readyShow
+        {
+            width:70%;
+            margin-top: 1%;
+            margin-left: 40%;
+            margin-right: auto;
+            text-align: center;
+            letter-spacing: 10px;
+            font-weight: 700;
+            font-size:150px;
+            font-family: SimSun;
+            text-shadow: 0px 0px 40px #E6E6FA;
+            color:  black;
+        }
+        .question
+        {
+            width:70%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            letter-spacing: 10px;
+            font-weight: 900;
+            font-size:200px;
+            font-family: SimSun;
+            text-shadow: 0px 0px 40px #E6E6FA;
+            color:  black;
         }
     </style>
 </head>
 
 
-<body id="up" style="background-position:top;background-image: url(img/国团答辩.jpg);margin-top:15%" width="100%" height="100%">
+<body id="up" >
+<div id="five_second"></div>
+<div id="one_minute"></div>
+<div id="web_bg" >
+    <img src="img/国团答辩.jpg" height="100%" width="100%"/>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#web_bg1').height($(window).height());
+        $('#web_bg').width($(window).width());
+    });
+</script>
 <div id="container">
     <div id="time-tilte">
-        <span id="clock"  class="page-title-time" >08:00</span>
+        <div id="onShow" class="onShow">
+            <div id="groupNum" style="display: inline">43A162</div>
+            <div style="display: inline">团支部展示环节</div>
+        </div>
+        <div id="readyShow" class="readyShow">
+            <div style="display: inline">请</div>
+            <div id="readyGroupNum" style="display: inline">040156</div>
+            <div style="display: inline">团支部做好准备</div>
+        </div>
+        <div id="clock"  class="page-title-time" >08:00</div>
+        <div id="question" class="question" style="visibility: hidden;">无</div>
         <br/>
         <div style="font-weight:bold;font-size:30px;margin-left: 40%;color:#FF4500;">
             <input id="startB" class="btn3_mouseup" type="button" value="Start" onclick="run()">
             <input id="endB" class="btn" type="button" value="Pause" onclick="stop()">
-            <input id="endB" class="btn" type="button" value="Reset" onclick="javascript:window.location.reload();">
+            <input id="resetB" class="btn" type="button" value="Reset" onclick="reset()">
+            <input id="nextGroup" class="btn" type="button" value="NextG" onclick="nextGroup()">
             <input id="diff" type="hidden">
             <input id="next" type="hidden">
-
-            <script language="Javascript" src="timer.js"></script>
         </div>
     </div>
 </div>
