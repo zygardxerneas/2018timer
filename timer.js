@@ -115,12 +115,15 @@ function reset()
 function nextGroup() {
     reset();
     groupi++;
-    document.getElementById('groupNum').innerText=groupNum[groupi];
     if(groupi<16)
-        document.getElementById('readyGroupNum').innerText=groupNum[groupi+1];
+    {
+        document.getElementById('groupNum').innerText=groupNum[groupi];
+        document.getElementById('readyGroupNum').innerText = groupNum[groupi + 1];
+    }
     else
         if (groupi==16)
         {
+            document.getElementById('groupNum').innerText=groupNum[groupi];
             document.getElementById("readyShow").style.visibility='hidden';
         }
 
