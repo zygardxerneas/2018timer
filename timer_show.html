@@ -74,14 +74,15 @@
         }
         .question
         {
+            position:relative;
+            margin-top:10%;
             width:70%;
             margin-left: auto;
             margin-right: auto;
-            text-align: center;
             letter-spacing: 10px;
             font-weight: 900;
             font-size:200px;
-            font-family: SimSun;
+            font-family: fzGBK;
             text-shadow: 0px 0px 40px #E6E6FA;
             color:  black;
         }
@@ -104,18 +105,17 @@
 <div id="container">
     <div id="time-tilte">
         <div id="onShow" class="onShow">
-            <div id="groupNum" style="display: inline">43A162</div>
+            <div id="groupNum" style="display: inline">040156</div>
             <div style="display: inline">团支部展示环节</div>
         </div>
         <div id="readyShow" class="readyShow">
             <div style="display: inline">请</div>
-            <div id="readyGroupNum" style="display: inline">040156</div>
+            <div id="readyGroupNum" style="display: inline">026161</div>
             <div style="display: inline">团支部做好准备</div>
         </div>
+        <div id="question" class="question" style="display:none"><br/><br/><br/><br/></div>
         <div id="clock"  class="page-title-time" >08:00</div>
-        <div id="question" class="question" style="visibility: hidden;">无</div>
-        <br/>
-        <div class="row" style="font-weight:bold;font-size:30px;color:#FF4500;">
+        <div class="row" style="font-weight:bold;font-size:30px;color:#FF4500;position:relative;imargin-bottom:5%">
             <input id="startB" class="col-md-2 btn btn-success" type="button" value="Start" onclick="run()">
             <input id="endB" class="col-md-2 btn btn-default" type="button" value="Pause" onclick="stop()">
             <input id="resetB" class="col-md-2 btn btn-info" type="button" value="Reset" onclick="reset()">
